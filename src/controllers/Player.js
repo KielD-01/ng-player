@@ -60,6 +60,8 @@ angularPlayer.controller('PlayerController', function ($rootScope, $scope, Artis
         $scope.player.track.index = trackIndex;
         $scope.player.track.selected = $scope.data.tracks[trackIndex];
 
+        $rootScope.title.additional = `${$scope.player.track.selected.title} by ${$scope.player.track.selected.artist.title}`;
+
         if ($scope.player.track.selected.url) {
             audio = new Audio($scope.player.track.selected.url);
 
@@ -144,8 +146,8 @@ angularPlayer.controller('PlayerController', function ($rootScope, $scope, Artis
             case 'prev':
                 $scope.player.track.index = (
                     trackIndex === 0 ?
-                    tracksLength - 1 :
-                    trackIndex - 1
+                        tracksLength - 1 :
+                        trackIndex - 1
                 );
                 break;
             case 'next':
