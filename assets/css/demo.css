@@ -1,0 +1,22 @@
+.valign-wrapper {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.cover-wrapper {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    height: 140px;
+}
+
+.controls-margin {
+    margin-top: 2rem;
+}
+
+.content-container {
+    max-height: 500px;
+    overflow: auto;
+}

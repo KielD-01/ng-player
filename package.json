@@ -1,0 +1,20 @@
+{
+  "name": "angularjs-player",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.8",
+    "angular-route": "^1.6.8",
+    "angular-sanitize": "^1.6.8",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.11",
+    "materialize-css": "^1.0.0-rc.2"
+  }
+}

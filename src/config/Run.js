@@ -1,0 +1,3 @@
+angularPlayer.run(function () {
+
+});

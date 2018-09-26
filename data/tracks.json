@@ -1,0 +1,103 @@
+{
+  "tracks": [
+    {
+      "artist_id": 1,
+      "url": "/data/tracks/alex-kenji/Screenset.mp3",
+      "title": "Screenset",
+      "artist": {
+        "id": 1,
+        "title": "Alex Kenji",
+        "cover": "/data/artists/alex-kenji.png",
+        "slug": "alex-kenji"
+      }
+    },
+    {
+      "artist_id": 2,
+      "url": "/data/tracks/axis/Echoes.mp3",
+      "title": "Echoes",
+      "artist": {
+        "id": 2,
+        "title": "Axis",
+        "cover": "/data/artists/axis.png",
+        "slug": "axis"
+      }
+    },
+    {
+      "artist_id": 3,
+      "url": "/data/tracks/lanvary/Slingshot-Ride.mp3",
+      "title": "Slingshot Ride (Original Mix)",
+      "artist": {
+        "id": 3,
+        "title": "Lanvary",
+        "cover": "/data/artists/lanvary.png",
+        "slug": "lanvary"
+      }
+    },
+    {
+      "artist_id": 4,
+      "url": "/data/tracks/omnia/Drym.mp3",
+      "title": "Drym (Extended Mix)",
+      "artist": {
+        "id": 4,
+        "title": "Omnia",
+        "cover": "/data/artists/omnia.png",
+        "slug": "omnia"
+      }
+    },
+    {
+      "artist_id": 5,
+      "url": "/data/tracks/tom-cloud/Mercury-Room.mp3",
+      "title": "Mercury Room",
+      "artist": {
+        "id": 5,
+        "title": "Tom Cloud",
+        "cover": "/data/artists/tom-cloud.png",
+        "slug": "tom-cloud"
+      }
+    },
+    {
+      "artist_id": 6,
+      "url": "/data/tracks/vanessa-da-mata/Ai-Ai-Ai.mp3",
+      "title": "Ai Ai Ai (Felguk & Cat Dealers Remix)",
+      "artist": {
+        "id": 6,
+        "title": "Vanessa Da Mata",
+        "cover": "/data/artists/vanessa-da-mata.png",
+        "slug": "vanessa-da-mata"
+      }
+    },
+    {
+      "artist_id": 7,
+      "url": "/data/tracks/roberto-rios-x-dan-sparks/Rakjuk-Össze.mp3",
+      "title": "Rakjuk Össze!",
+      "artist": {
+        "id": 7,
+        "title": "Roberto Rios x Dan Sparks",
+        "cover": "/data/artists/roberto-rios-x-dan-sparks.png",
+        "slug": "roberto-rios-x-dan-sparks"
+      }
+    },
+    {
+      "artist_id": 8,
+      "url": "/data/tracks/alesso/Let-Me-Go.mp3",
+      "title": "Let Me Go",
+      "artist": {
+        "id": 8,
+        "title": "Alesso",
+        "cover": "/data/artists/alesso.png",
+        "slug": "alesso"
+      }
+    },
+    {
+      "artist_id": 9,
+      "url": "/data/tracks/dj-snake/Mr.Snake.mp3",
+      "title": "Mr.Snake",
+      "artist": {
+        "id": 9,
+        "title": "DJ Snake",
+        "cover": "/data/artists/dj-snake.png",
+        "slug": "dj-snake"
+      }
+    }
+  ]
+}

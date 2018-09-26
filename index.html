@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <base href="./">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./node_modules/materialize-css/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/demo.css">
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+
+<body ng-app="ngPlayer">
+<div class="container" ng-controller="PlayerController">
+    <div class="row">
+
+        <div class="col s12 m3 card">
+            <div class="collection">
+                <a class="collection-item" ng-click="switchState('artists')" style="cursor:pointer;">
+                    <span class="badge" ng-bind="data.meta.artists">0</span>Artists
+                </a>
+                <a class="collection-item" ng-click="switchState('albums')" style="cursor:pointer;">
+                    <span class="badge" ng-bind="data.meta.albums">0</span>Albums
+                </a>
+                <a class="collection-item" ng-click="switchState('tracks')" style="cursor:pointer;">
+                    <span class="badge" ng-bind="data.meta.tracks">0</span>Tracks
+                </a>
+            </div>
+        </div>
+
+        <div class="col s12 m8 offset-m1 card content-container">
+
+            <div class="row center" ng-if="!loading && state == 'artists'">
+                <div class="col m4" ng-repeat="artist in data.artists">
+                    <img src="{{ artist.cover }}" ng-cloak alt="{{ artist.title }}" class="circle"
+                         style="height: 50px; width: 50px;">
+
+                    <p ng-bind="artist.title"></p>
+                </div>
+            </div>
+
+            <div class="row" ng-if="!loading && state == 'albums'">
+
+            </div>
+
+            <div class="row" ng-if="!loading && state == 'tracks'">
+                <div class="col s12">
+                    <ul class="collection" ng-repeat="track in data.tracks">
+                        <li class="collection-item avatar">
+                            <img ng-src="{{ track.artist.cover }}" alt="" class="circle">
+                            <span class="title"></span>
+                            <p ng-bind-html="track.title + ' <br> ' + track.artist.title"></p>
+                            <a href="javascript:void(0)" class="secondary-content">
+                                <i class="material-icons"
+                                   ng-bind="player.track.index === $index ? 'pause' : 'play_arrow'"
+                                   ng-click="switchPlayState($index)" style="cursor: pointer;"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row valign-wrapper center-align" ng-cloak ng-if="loading">
+                <div class="col s12">
+                    <div class="preloader-wrapper big active">
+                        <div class="spinner-layer spinner-blue-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 center">
+                    <h4>Data Library is loading</h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row valign-wrapper center-align" ng-if="!loading">
+        <div class="col s12 card">
+            <div class="col m2 cover-wrapper">
+                <img ng-src="{{ player.track.selected.artist.cover || '/assets/icons/vinyl.png' }}" alt=""
+                     style="max-width: 100px; max-height: 100px;"
+                     class="circle responsive-img">
+            </div>
+            <div class="col m10">
+
+                <div class="row controls-margin">
+                    <div class="col s4 m1 offset-m4">
+                        <i class="class material-icons" style="cursor: pointer;" ng-click="switchTrack('prev')">skip_previous</i>
+                    </div>
+                    <div class="col s4 m1">
+                        <i class="material-icons" ng-class="{'grey-text lighten-3': !player.track.selected}"
+                           ng-bind="player.state.playing ? 'pause' : 'play_arrow'"
+                           ng-click="switchPlayState(player.track.index)" style="cursor: pointer;"></i>
+                    </div>
+                    <div class="col s4 m1">
+                        <i class="class material-icons" style="cursor: pointer;" ng-click="switchTrack('next')">skip_next</i>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col m2 left-align" ng-bind="player.state.position.current | timeConvert">00:00:00</div>
+                    <div class="col offset-m8 m2 right-align" ng-bind="player.state.position.duration | timeConvert">
+                        00:00:00
+                    </div>
+
+                    <div class="col s12">
+                        <div class="progress">
+                            <div class="determinate"
+                                 style="width: {{ (player.state.position.current / player.state.position.duration) * 100 }}%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+
+<!-- Core -->
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script src="./node_modules/lodash/lodash.js"></script>
+<script src="./node_modules/materialize-css/dist/js/materialize.js"></script>
+
+<script src="./node_modules/angular/angular.min.js"></script>
+<script src="./node_modules/angular-route/angular-route.js"></script>
+<script src="./node_modules/angular-sanitize/angular-sanitize.js"></script>
+
+<script src="./src/app.js"></script>
+
+<!-- Configs -->
+<script src="./src/config/Config.js"></script>
+<script src="./src/config/Run.js"></script>
+
+<!-- Services -->
+<script src="./src/services/Artists.js"></script>
+<script src="./src/services/Albums.js"></script>
+<script src="./src/services/Tracks.js"></script>
+
+<!-- Controllers -->
+<script src="./src/controllers/Player.js"></script>
+
+<!-- Filters -->
+<script src="./src/filters/DurationConverter.js"></script>
+
+</html>

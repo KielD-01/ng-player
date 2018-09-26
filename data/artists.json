@@ -1,0 +1,58 @@
+{
+  "artists": [
+    {
+      "id": 1,
+      "title": "Alex Kenji",
+      "cover": "/data/artists/alex-kenji.png",
+      "slug": "alex-kenji"
+    },
+    {
+      "id": 2,
+      "title": "Axis",
+      "cover": "/data/artists/axis.png",
+      "slug": "axis"
+    },
+    {
+      "id": 3,
+      "title": "Lanvary",
+      "cover": "/data/artists/lanvary.png",
+      "slug": "lanvary"
+    },
+    {
+      "id": 4,
+      "title": "Omnia",
+      "cover": "/data/artists/omnia.png",
+      "slug": "omnia"
+    },
+    {
+      "id": 5,
+      "title": "Tom Cloud",
+      "cover": "/data/artists/tom-cloud.png",
+      "slug": "tom-cloud"
+    },
+    {
+      "id": 6,
+      "title": "Vanessa Da Mata",
+      "cover": "/data/artists/vanessa-da-mata.png",
+      "slug": "vanessa-da-mata"
+    },
+    {
+      "id": 7,
+      "title": "Roberto Rios x Dan Sparks",
+      "cover": "/data/artists/roberto-rios-x-dan-sparks.png",
+      "slug": "roberto-rios-x-dan-sparks"
+    },
+    {
+      "id": 8,
+      "title": "Alesso",
+      "cover": "/data/artists/alesso.png",
+      "slug": "alesso"
+    },
+    {
+      "id": 9,
+      "title": "DJ Snake",
+      "cover": "/data/artists/dj-snake.png",
+      "slug": "dj-snake"
+    }
+  ]
+}
