@@ -142,14 +142,18 @@ angularPlayer.controller('PlayerController', function ($rootScope, $scope, Artis
 
         switch (position) {
             case 'prev':
-                $scope.player.track.index = trackIndex === 0 ?
+                $scope.player.track.index = (
+                    trackIndex === 0 ?
                     tracksLength - 1 :
-                    trackIndex - 1;
+                    trackIndex - 1
+                );
                 break;
             case 'next':
-                $scope.player.track.index = trackIndex === tracksLength ?
-                    0 :
-                    trackIndex + 1;
+                $scope.player.track.index = (
+                    trackIndex === tracksLength - 1 ?
+                        0 :
+                        trackIndex + 1
+                );
                 break;
         }
 
